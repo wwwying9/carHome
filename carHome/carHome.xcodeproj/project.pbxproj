@@ -17,6 +17,7 @@
 		379EFFE51CED4ADC00ECB598 /* carHomeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFE41CED4ADC00ECB598 /* carHomeUITests.m */; };
 		379EFFF41CED5C2C00ECB598 /* YYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFF31CED5C2C00ECB598 /* YYButton.m */; };
 		379EFFF71CED67FB00ECB598 /* YYShowScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFF61CED67FB00ECB598 /* YYShowScrollView.m */; };
+		379EFFFB1CED96B200ECB598 /* YSTopScrview.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFFA1CED96B200ECB598 /* YSTopScrview.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		379EFFF31CED5C2C00ECB598 /* YYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYButton.m; sourceTree = "<group>"; };
 		379EFFF51CED67FB00ECB598 /* YYShowScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYShowScrollView.h; sourceTree = "<group>"; };
 		379EFFF61CED67FB00ECB598 /* YYShowScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYShowScrollView.m; sourceTree = "<group>"; };
+		379EFFF91CED96B200ECB598 /* YSTopScrview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTopScrview.h; sourceTree = "<group>"; };
+		379EFFFA1CED96B200ECB598 /* YSTopScrview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTopScrview.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 		379EFFBE1CED4ADC00ECB598 /* carHome */ = {
 			isa = PBXGroup;
 			children = (
+				379EFFF81CED96A600ECB598 /* ys */,
 				379EFFC21CED4ADC00ECB598 /* AppDelegate.h */,
 				379EFFC31CED4ADC00ECB598 /* AppDelegate.m */,
 				379EFFC51CED4ADC00ECB598 /* ViewController.h */,
@@ -148,6 +152,15 @@
 				379EFFE61CED4ADC00ECB598 /* Info.plist */,
 			);
 			path = carHomeUITests;
+			sourceTree = "<group>";
+		};
+		379EFFF81CED96A600ECB598 /* ys */ = {
+			isa = PBXGroup;
+			children = (
+				379EFFF91CED96B200ECB598 /* YSTopScrview.h */,
+				379EFFFA1CED96B200ECB598 /* YSTopScrview.m */,
+			);
+			name = ys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				379EFFC71CED4ADC00ECB598 /* ViewController.m in Sources */,
+				379EFFFB1CED96B200ECB598 /* YSTopScrview.m in Sources */,
 				379EFFC41CED4ADC00ECB598 /* AppDelegate.m in Sources */,
 				379EFFC11CED4ADC00ECB598 /* main.m in Sources */,
 				379EFFF71CED67FB00ECB598 /* YYShowScrollView.m in Sources */,
@@ -511,6 +525,7 @@
 				379EFFEB1CED4ADC00ECB598 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		379EFFEC1CED4ADC00ECB598 /* Build configuration list for PBXNativeTarget "carHomeTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +534,7 @@
 				379EFFEE1CED4ADC00ECB598 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		379EFFEF1CED4ADC00ECB598 /* Build configuration list for PBXNativeTarget "carHomeUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +543,7 @@
 				379EFFF11CED4ADC00ECB598 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

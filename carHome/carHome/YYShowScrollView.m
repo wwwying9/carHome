@@ -118,14 +118,14 @@
         [self.bottomBarArr addObject:btn];
 //        NSLog(@"bottomBarArr--%@",self.bottomBarArr);
         //布局
-        //        [self.showView setNeedsLayout];
+        //[self.showView setNeedsLayout];
         [self layoutShowView];
         
         
     }else{
         //在 bottom,需要移动到 top
         //从bottom数组中移除, 加入到top数组中
-        //从top中移除
+        //从bottom中移除
         btn.status = YES;
         __weak NSMutableArray *topBarArr = self.bottomBarArr;
         [topBarArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -189,7 +189,6 @@
         self.bottomLabel.frame = bottomLabelFrame;
 //        NSLog(@"initBLY = %f,cuont = %li",initBLY,cuont);
 //        NSLog(@"bottomLabel.frame = %@", NSStringFromCGRect(bottomLabelFrame));
-        
         
         
         //计算 bottom btn 的初始 Y
