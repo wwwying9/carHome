@@ -15,6 +15,8 @@
 		379EFFCF1CED4ADC00ECB598 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379EFFCD1CED4ADC00ECB598 /* LaunchScreen.storyboard */; };
 		379EFFDA1CED4ADC00ECB598 /* carHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFD91CED4ADC00ECB598 /* carHomeTests.m */; };
 		379EFFE51CED4ADC00ECB598 /* carHomeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFE41CED4ADC00ECB598 /* carHomeUITests.m */; };
+		379EFFF41CED5C2C00ECB598 /* YYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFF31CED5C2C00ECB598 /* YYButton.m */; };
+		379EFFF71CED67FB00ECB598 /* YYShowScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFF61CED67FB00ECB598 /* YYShowScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		379EFFE01CED4ADC00ECB598 /* carHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = carHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		379EFFE41CED4ADC00ECB598 /* carHomeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = carHomeUITests.m; sourceTree = "<group>"; };
 		379EFFE61CED4ADC00ECB598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		379EFFF21CED5C2C00ECB598 /* YYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYButton.h; sourceTree = "<group>"; };
+		379EFFF31CED5C2C00ECB598 /* YYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYButton.m; sourceTree = "<group>"; };
+		379EFFF51CED67FB00ECB598 /* YYShowScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYShowScrollView.h; sourceTree = "<group>"; };
+		379EFFF61CED67FB00ECB598 /* YYShowScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYShowScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,10 @@
 				379EFFC31CED4ADC00ECB598 /* AppDelegate.m */,
 				379EFFC51CED4ADC00ECB598 /* ViewController.h */,
 				379EFFC61CED4ADC00ECB598 /* ViewController.m */,
+				379EFFF51CED67FB00ECB598 /* YYShowScrollView.h */,
+				379EFFF61CED67FB00ECB598 /* YYShowScrollView.m */,
+				379EFFF21CED5C2C00ECB598 /* YYButton.h */,
+				379EFFF31CED5C2C00ECB598 /* YYButton.m */,
 				379EFFC81CED4ADC00ECB598 /* Main.storyboard */,
 				379EFFCB1CED4ADC00ECB598 /* Assets.xcassets */,
 				379EFFCD1CED4ADC00ECB598 /* LaunchScreen.storyboard */,
@@ -202,6 +212,7 @@
 		379EFFB41CED4ADC00ECB598 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YY;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = yy;
 				TargetAttributes = {
@@ -273,6 +284,8 @@
 				379EFFC71CED4ADC00ECB598 /* ViewController.m in Sources */,
 				379EFFC41CED4ADC00ECB598 /* AppDelegate.m in Sources */,
 				379EFFC11CED4ADC00ECB598 /* main.m in Sources */,
+				379EFFF71CED67FB00ECB598 /* YYShowScrollView.m in Sources */,
+				379EFFF41CED5C2C00ECB598 /* YYButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

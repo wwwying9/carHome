@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "YYButton.h"
+#import "YYShowScrollView.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIScrollView *showView;
+@property (weak, nonatomic) IBOutlet YYShowScrollView *showView;
 
 /// topLabel
 @property(nonatomic, weak) UILabel *topLabel;
@@ -30,9 +32,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.showView.alwaysBounceVertical = NO;
+    self.showView.alwaysBounceHorizontal = NO;
     
     [self showViewInit];
 }
+
+
 
 //初始化
 - (void)showViewInit{
@@ -41,26 +47,63 @@
     const CGFloat sVH = self.showView.frame.size.height;
     const int HorLen  = 4;   //水平长度,每一行的bnt数.
     const CGFloat space = 10; //间距
-    const CGFloat btnH = 30;
+    const CGFloat btnH = 25;
+    const CGFloat lebelH = 20;
     
     //计算btnW
     const CGFloat btnW = (sVW - space * (HorLen +1)) / HorLen;
     
     //设置topLable
-    UILabel *topLable = [[UILabel alloc]initWithFrame:CGRectMake(space, space, sVW, btnH)];
+    UILabel *topLable = [[UILabel alloc]initWithFrame:CGRectMake(space, space, sVW, lebelH)];
+    topLable.font = [UIFont systemFontOfSize:14];
     topLable.text = @"已选频道:";
     self.topLabel = topLable;
     [self.showView addSubview:self.topLabel];
     
+    //计算 top btn 的初始 Y
+    const CGFloat initTY = CGRectGetMaxY(self.topLabel.frame) + space;
     
+    //设置 '最新' btn
+    CGFloat btnX = 0 % HorLen * (space + btnW) + space;
+    CGFloat btnY = 0 / HorLen * (space + btnH) + initTY;
+    YYButton *btn = [YYButton buttonWithString:@"最新" tag:0 frame:CGRectMake(btnX, btnY, btnW, btnH)];
+    [btn setBackgroundColor:[UIColor clearColor]];
+    [self.showView addSubview:btn];
     
-    UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(space, space, sVW, btnH)];
+    //设置btn
+    [self.barArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        //计算btn的x,y
+        CGFloat btnX = (idx + 1) % HorLen * (space + btnW) + space;
+        CGFloat btnY = (idx + 1) / HorLen * (space + btnH) + initTY;
+        //创建btn
+        YYButton *btn = [YYButton buttonWithString:(NSString *)obj tag:idx frame:CGRectMake(btnX, btnY, btnW, btnH)];
+        [self.showView addSubview:btn];
+        //绑定点击事件
+        [btn addTarget:self action:@selector(barBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+
+    }];
+    
+
+    //计算 bottomLabel 的初始 Y
+    const CGFloat initBLY = CGRectGetMaxY([self.showView.subviews.lastObject frame]) + space;
+    
+    //设置bottomLabel
+    UILabel *bottomLabel = [[UILabel alloc]initWithFrame:CGRectMake(space, initBLY, sVW, lebelH)];
+    bottomLabel.font = [UIFont systemFontOfSize:14];
     bottomLabel.text = @"可选频道:";
     self.bottomLabel = bottomLabel;
     [self.showView addSubview:self.bottomLabel];
     
 }
 
+
+#pragma mark - 点击按钮
+- (void)barBtnClick:(UIButton *)btn{
+    NSLog(@"%s",__func__);
+    
+    
+}
 
 
 #pragma mark - lize
