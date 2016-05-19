@@ -50,20 +50,52 @@
 
 -(void)clickBtn:(UIButton *)btn{
 
-    [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:10 initialSpringVelocity:50 options:UIViewAnimationOptionLayoutSubviews animations:^{
-        [self changeFrame:btn];
-        
-    } completion:^(BOOL finished) {
-    }];
-}
-
-//计算按钮位置
--(void)changeFrame:(UIButton *)btn{
     CGFloat w = btn.titleLabel.frame.size.width;
     CGFloat h = 2;
     CGFloat x = btn.frame.origin.x + btn.titleLabel.frame.origin.x;
     CGFloat y = CGRectGetMaxY(btn.frame);
-    self.bottomView.frame = CGRectMake(x, y, w, h);
+    
+    if ((x > self.contentOffset.x + 9 ) && (x < self.contentOffset.x + self.frame.size.width -  w) ) {
+        [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:10 initialSpringVelocity:50 options:UIViewAnimationOptionLayoutSubviews animations:^{
+            
+            self.bottomView.frame = CGRectMake(x, y, w, h);
+            NSLog(@"x = %f w = %f contentOffset.x = %f ",x,w, self.contentOffset.x);
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.3 animations:^{
+                //            self.contentOffset = CGPointMake(self.frame.size.width / 2, 0);
+            }];
+        }];
+    }
+    else
+    {
+        [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:10 initialSpringVelocity:50 options:UIViewAnimationOptionLayoutSubviews animations:^{
+            
+            //计算偏移
+            CGFloat contentOffsetX = self.contentOffset.x + (self.frame.size.width - w) / 2;
+            
+            CGFloat temp =  self.contentSize.width - self.frame.size.width;
+            if (contentOffsetX > temp) {
+                contentOffsetX = temp;
+            }
+            
+            self.contentOffset = CGPointMake(contentOffsetX, 0);
+            self.bottomView.frame = CGRectMake(x, y, w, h);
+            NSLog(@"x = %f w = %f contentOffset.x = %f ",x,w, self.contentOffset.x);
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.3 animations:^{
+//                self.contentOffset = CGPointMake(self.frame.size.width / 2, 0);
+            }];
+        }];
+    }
+    
+
+}
+
+//计算按钮位置
+-(void)changeFrame:(UIButton *)btn{
+    
 }
 
 #pragma mark -set
@@ -78,7 +110,7 @@
         //计算宽度
         NSDictionary *nameAttri = @{NSFontAttributeName : XMGNameFont};
         CGSize strSize = [(NSString *)_strArr[i] sizeWithAttributes:nameAttri];
-        CGFloat btnW = strSize.width + 15;
+        CGFloat btnW = strSize.width + 20;
         CGFloat btnH = 42;
         CGFloat btnY = 0;
         //创建Btn
@@ -96,5 +128,7 @@
     }
     self.contentSize = CGSizeMake(btnX, 44);
 }
+
+
 
 @end
