@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface YSTopScrview : UIScrollView
-
+//根据这个数组生成导航条
+@property (strong, nonatomic) NSArray *strArr;
 @end
