@@ -10,6 +10,9 @@
 		379E00111CEDB9B300ECB598 /* YSTopScrview.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFFF1CEDB9B300ECB598 /* YSTopScrview.m */; };
 		379E00121CEDB9B300ECB598 /* YYShowScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 379E00011CEDB9B300ECB598 /* YYShowScrollView.m */; };
 		379E00131CEDB9B300ECB598 /* YYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 379E000C1CEDB9B300ECB598 /* YYButton.m */; };
+		379E00151CEDBBFB00ECB598 /* recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379E00141CEDBBFB00ECB598 /* recommend.storyboard */; };
+		379E00181CEDBC7D00ECB598 /* YYRecommendNC.m in Sources */ = {isa = PBXBuildFile; fileRef = 379E00171CEDBC7D00ECB598 /* YYRecommendNC.m */; };
+		379E001B1CEDBCC600ECB598 /* YYRecommendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 379E001A1CEDBCC600ECB598 /* YYRecommendVC.m */; };
 		379EFFC11CED4ADC00ECB598 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFC01CED4ADC00ECB598 /* main.m */; };
 		379EFFC41CED4ADC00ECB598 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFC31CED4ADC00ECB598 /* AppDelegate.m */; };
 		379EFFC71CED4ADC00ECB598 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFC61CED4ADC00ECB598 /* ViewController.m */; };
@@ -42,6 +45,11 @@
 		379E00011CEDB9B300ECB598 /* YYShowScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYShowScrollView.m; sourceTree = "<group>"; };
 		379E000B1CEDB9B300ECB598 /* YYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYButton.h; sourceTree = "<group>"; };
 		379E000C1CEDB9B300ECB598 /* YYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYButton.m; sourceTree = "<group>"; };
+		379E00141CEDBBFB00ECB598 /* recommend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = recommend.storyboard; sourceTree = "<group>"; };
+		379E00161CEDBC7D00ECB598 /* YYRecommendNC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRecommendNC.h; sourceTree = "<group>"; };
+		379E00171CEDBC7D00ECB598 /* YYRecommendNC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRecommendNC.m; sourceTree = "<group>"; };
+		379E00191CEDBCC600ECB598 /* YYRecommendVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRecommendVC.h; sourceTree = "<group>"; };
+		379E001A1CEDBCC600ECB598 /* YYRecommendVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRecommendVC.m; sourceTree = "<group>"; };
 		379EFFBC1CED4ADC00ECB598 /* carHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379EFFC01CED4ADC00ECB598 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		379EFFC21CED4ADC00ECB598 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +146,11 @@
 		379E00081CEDB9B300ECB598 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				379E00141CEDBBFB00ECB598 /* recommend.storyboard */,
+				379E00191CEDBCC600ECB598 /* YYRecommendVC.h */,
+				379E001A1CEDBCC600ECB598 /* YYRecommendVC.m */,
+				379E00161CEDBC7D00ECB598 /* YYRecommendNC.h */,
+				379E00171CEDBC7D00ECB598 /* YYRecommendNC.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -380,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				379EFFCF1CED4ADC00ECB598 /* LaunchScreen.storyboard in Resources */,
+				379E00151CEDBBFB00ECB598 /* recommend.storyboard in Resources */,
 				379EFFCC1CED4ADC00ECB598 /* Assets.xcassets in Resources */,
 				379EFFCA1CED4ADC00ECB598 /* Main.storyboard in Resources */,
 			);
@@ -412,6 +426,8 @@
 				379E00121CEDB9B300ECB598 /* YYShowScrollView.m in Sources */,
 				379E00111CEDB9B300ECB598 /* YSTopScrview.m in Sources */,
 				379E00131CEDB9B300ECB598 /* YYButton.m in Sources */,
+				379E00181CEDBC7D00ECB598 /* YYRecommendNC.m in Sources */,
+				379E001B1CEDBCC600ECB598 /* YYRecommendVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
