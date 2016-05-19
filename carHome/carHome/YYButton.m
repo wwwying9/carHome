@@ -21,6 +21,7 @@
 + (instancetype)buttonWithString:(NSString *)str tag:(NSInteger)tag frame:(CGRect)frame{
     
     YYButton *btn = [[self alloc]initWithFrame:frame];
+    btn.status = YES;   //默认位置为top
     btn.titleLabel.font = [UIFont systemFontOfSize:14];
     [btn setTag:tag];
     [btn setTitle:str forState:UIControlStateNormal];

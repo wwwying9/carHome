@@ -21,9 +21,9 @@
 /// 全部的类型 数组
 @property(nonatomic, strong) NSArray *barArray;
 /// topBar 数组
-@property(nonatomic, strong) NSArray *topBarArr;
+@property(nonatomic, strong) NSMutableArray *topBarArr;
 /// bottomBar 数组
-@property(nonatomic, strong) NSArray *bottomBarArr;
+@property(nonatomic, strong) NSMutableArray *bottomBarArr;
 @end
 
 
@@ -42,6 +42,8 @@
 
 //初始化
 - (void)showViewInit{
+    
+    self.topBarArr = [self.barArray mutableCopy];
     //定义常量
     const CGFloat sVW = self.showView.frame.size.width;
     const CGFloat sVH = self.showView.frame.size.height;
@@ -99,19 +101,44 @@
 
 
 #pragma mark - 点击按钮
-- (void)barBtnClick:(UIButton *)btn{
-    NSLog(@"%s",__func__);
-    
+- (void)barBtnClick:(YYButton *)btn{
+    NSLog(@"%li",btn.tag);
+//    NSLog(@"%@",btn.titleLabel.text);
+//    NSInteger inde = btn.tag;
+//    [self.showView layoutSubviews];
+    if (btn.isTop) {
+//在 top,需要移动到 bottom
+    //从top数组中移除, 加入到bottom数组中
+        //从top中移除
+        __weak NSMutableArray *topBarArr = self.topBarArr;
+        [topBarArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([(NSString *)obj isEqualToString:btn.titleLabel.text]) {
+                [topBarArr removeObjectAtIndex:idx];
+                *stop = YES;
+            }
+        }];
+        NSLog(@"%@",self.topBarArr);
+        //加入bottom
+        [self.bottomBarArr addObject:btn.titleLabel.text];
+        NSLog(@"%@",self.bottomBarArr);
+        //布局
+        [self.showView setNeedsLayout];
+        
+        
+    }else{
+//在 bottom,需要移动到 top
+        [self.showView setNeedsLayout];
+    }
     
 }
 
 
 #pragma mark - lize
 
--(NSArray *)topBarArr{
+-(NSMutableArray *)topBarArr{
     if(_topBarArr == nil){
         
-        _topBarArr = [NSArray array];
+        _topBarArr = [NSMutableArray array];
     }
     return _topBarArr;
 }
@@ -119,7 +146,7 @@
 -(NSArray *)bottomBarArr{
     if(_bottomBarArr == nil){
         
-        _bottomBarArr = [NSArray array];
+        _bottomBarArr = [NSMutableArray array];
     }
     return _bottomBarArr;
 }
