@@ -9,7 +9,9 @@
 #import "YSTopScrview.h"
 
 @interface YSTopScrview ()
-@property (strong, nonatomic) NSArray *btnArr;
+@property (strong, nonatomic) NSArray *strArr;
+///按钮数组
+//@property(nonatomic, strong) NSMutableArray *btnArray;
 //底部指示器
 @property (weak, nonatomic) UIView *bottomView;
 @end
@@ -20,12 +22,13 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         //按钮数组
-        self.btnArr = @[@"全部",@"视频",@"图片",@"段子",@"声音"];
-        NSInteger count = [self.btnArr count];
+        self.strArr = @[@"全部",@"视频",@"视频",@"视频",@"视频",@"图片",@"段子",@"声音",@"声音",@"声音",@"声音",@"声音",@"声音"];
+        NSInteger count = [self.strArr count];
         for (NSInteger i = 0;i < count; i++) {
-            UIButton *btn = [[UIButton alloc]init];
+            UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 40)];
+            btn.titleLabel.font = [UIFont systemFontOfSize:15];
             btn.tag = i;
-            [btn setTitle:self.btnArr[i] forState:UIControlStateNormal];
+            [btn setTitle:self.strArr[i] forState:UIControlStateNormal];
             [self addSubview:btn];
             [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
         }
@@ -35,15 +38,15 @@
         [self addSubview:bottomView];
         self.bottomView = bottomView;
         //
-        self.contentSize = CGSizeMake(500, 30);
+        self.contentSize = CGSizeMake(count * (50 + 0), 30);
         self.backgroundColor = [[UIColor whiteColor]colorWithAlphaComponent:0.5];
     }
-    return  self;
+    return self;
 }
 
 -(void)layoutSubviews{
-    CGFloat w = self.frame.size.width / self.btnArr.count;
-    CGFloat h = 30;
+    CGFloat w = 70;
+    CGFloat h = 42;
     //按钮位置
     for(UIView *btn in self.subviews){
         if (![btn isKindOfClass:NSClassFromString(@"UIButton")]) continue;
@@ -62,13 +65,12 @@
         
     } completion:^(BOOL finished) {
     }];
-    
 }
 
 //计算按钮位置
 -(void)changeFrame:(UIButton *)btn{
     CGFloat w = btn.titleLabel.frame.size.width;
-    CGFloat h = 3;
+    CGFloat h = 2;
     CGFloat x = btn.frame.origin.x + btn.titleLabel.frame.origin.x;
     CGFloat y = CGRectGetMaxY(btn.frame);
     self.bottomView.frame = CGRectMake(x, y, w, h);

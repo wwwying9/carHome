@@ -26,7 +26,7 @@
     self.showView.alwaysBounceHorizontal = NO;
     
     YSTopScrview *top = [[YSTopScrview alloc]init];
-    top.frame = CGRectMake(0, 0, 500, 44);
+    top.frame = CGRectMake(0, 0, 375, 44);
     top.contentSize = CGSizeMake(500, 44);    
     [self.topView addSubview:top];
     
