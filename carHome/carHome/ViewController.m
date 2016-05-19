@@ -18,8 +18,12 @@
 /// bottomLabel
 @property(nonatomic, weak) UILabel *bottomLabel;
 
-/// 全部的类型 数组
+/// 全部的类型(NSString) 数组
 @property(nonatomic, strong) NSArray *barArray;
+
+/// 全部的类型(UIButton) 数组
+@property(nonatomic, strong) NSMutableArray *btnArray;
+
 /// topBar 数组
 @property(nonatomic, strong) NSMutableArray *topBarArr;
 /// bottomBar 数组
@@ -42,8 +46,7 @@
 
 //初始化
 - (void)showViewInit{
-    
-    self.topBarArr = [self.barArray mutableCopy];
+
     //定义常量
     const CGFloat sVW = self.showView.frame.size.width;
     const CGFloat sVH = self.showView.frame.size.height;
@@ -69,6 +72,7 @@
     CGFloat btnX = 0 % HorLen * (space + btnW) + space;
     CGFloat btnY = 0 / HorLen * (space + btnH) + initTY;
     YYButton *btn = [YYButton buttonWithString:@"最新" tag:0 frame:CGRectMake(btnX, btnY, btnW, btnH)];
+    
     [btn setBackgroundColor:[UIColor clearColor]];
     [self.showView addSubview:btn];
     
@@ -80,6 +84,8 @@
         CGFloat btnY = (idx + 1) / HorLen * (space + btnH) + initTY;
         //创建btn
         YYButton *btn = [YYButton buttonWithString:(NSString *)obj tag:idx frame:CGRectMake(btnX, btnY, btnW, btnH)];
+//        NSLog(@"%@",btn);
+        [self.btnArray addObject:btn];
         [self.showView addSubview:btn];
         //绑定点击事件
         [btn addTarget:self action:@selector(barBtnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -97,6 +103,9 @@
     self.bottomLabel = bottomLabel;
     [self.showView addSubview:self.bottomLabel];
     
+    //copy
+    self.topBarArr = [self.btnArray mutableCopy];
+    
 }
 
 
@@ -110,26 +119,113 @@
 //在 top,需要移动到 bottom
     //从top数组中移除, 加入到bottom数组中
         //从top中移除
+        btn.status = NO;
         __weak NSMutableArray *topBarArr = self.topBarArr;
         [topBarArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([(NSString *)obj isEqualToString:btn.titleLabel.text]) {
+            NSString *str = [[(YYButton *)obj titleLabel] text];
+            if ([str isEqualToString:btn.titleLabel.text]) {
                 [topBarArr removeObjectAtIndex:idx];
                 *stop = YES;
             }
         }];
-        NSLog(@"%@",self.topBarArr);
-        //加入bottom
-        [self.bottomBarArr addObject:btn.titleLabel.text];
-        NSLog(@"%@",self.bottomBarArr);
+        NSLog(@"topBarArr -- %@",self.topBarArr);
+        //加入到bottom
+        [self.bottomBarArr addObject:btn];
+        NSLog(@"bottomBarArr--%@",self.bottomBarArr);
         //布局
-        [self.showView setNeedsLayout];
+//        [self.showView setNeedsLayout];
+        [self layoutShowView:btn];
         
         
     }else{
 //在 bottom,需要移动到 top
-        [self.showView setNeedsLayout];
+    //从bottom数组中移除, 加入到top数组中
+        //从top中移除
+        btn.status = YES;
+        __weak NSMutableArray *topBarArr = self.bottomBarArr;
+        [topBarArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSString *str = [[(YYButton *)obj titleLabel] text];
+            if ([str isEqualToString:btn.titleLabel.text]) {
+                [topBarArr removeObjectAtIndex:idx];
+                *stop = YES;
+            }
+        }];
+        NSLog(@"bottomBarArr-  -%@",self.bottomBarArr);
+        //加入到top
+        [self.topBarArr addObject:btn];
+        NSLog(@"topBarArr-  -%@",self.topBarArr);
+        //布局
+        //        [self.showView setNeedsLayout];
+        [self layoutShowView:btn];
     }
     
+}
+
+#pragma mark - 布局ScrollView
+- (void)layoutShowView:(YYButton *)sender{
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        //定义常量
+        const CGFloat sVW = self.showView.frame.size.width;
+        const CGFloat sVH = self.showView.frame.size.height;
+        const int HorLen  = 4;   //水平长度,每一行的bnt数.
+        const CGFloat space = 10; //间距
+        const CGFloat btnH = 25;
+        const CGFloat lebelH = 20;
+        
+        //计算btnW
+        const CGFloat btnW = (sVW - space * (HorLen +1)) / HorLen;
+        
+        //计算 top btn 的初始 Y
+        const CGFloat initTY = CGRectGetMaxY(self.topLabel.frame) + space;
+        
+        //设置topBarArr
+        [self.topBarArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            //        NSLog(@"obj = %@",obj);
+            //计算btn的x,y
+            CGFloat btnX = (idx + 1) % HorLen * (space + btnW) + space;
+            CGFloat btnY = (idx + 1) / HorLen * (space + btnH) + initTY;
+            //重新布局btn
+            YYButton *btn = (YYButton *)obj;
+            CGRect btnFrame = btn.frame;
+            btnFrame.origin.x = btnX;
+            btnFrame.origin.y = btnY;
+            btn.frame = btnFrame;
+            NSLog(@"btn = %@ \n str = %@", btn ,btn.titleLabel.text);
+        }];
+        
+        
+        NSInteger cuont = self.topBarArr.count;
+        const CGFloat initBLY = CGRectGetMaxY(self.topLabel.frame) + (((cuont / HorLen) + 1) * (space + btnH)) +space;
+        
+        //重新布局bottomLabel
+        CGRect bottomLabelFrame = self.bottomLabel.frame;
+        bottomLabelFrame.origin.y = initBLY;
+        self.bottomLabel.frame = bottomLabelFrame;
+        NSLog(@"initBLY = %f,cuont = %li",initBLY,cuont);
+        NSLog(@"bottomLabel.frame = %@", NSStringFromCGRect(bottomLabelFrame));
+        
+        
+        
+        //计算 bottom btn 的初始 Y
+        const CGFloat initBY = CGRectGetMaxY(self.bottomLabel.frame) + space;
+        
+        //设置bottomBarArr
+        [self.bottomBarArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            //计算btn的x,y
+            CGFloat btnX = (idx) % HorLen * (space + btnW) + space;
+            CGFloat btnY = (idx) / HorLen * (space + btnH) + initBY;
+            //重新布局btn
+            YYButton *btn = (YYButton *)obj;
+            CGRect btnFrame = btn.frame;
+            btnFrame.origin.x = btnX;
+            btnFrame.origin.y = btnY;
+            btn.frame = btnFrame;
+            NSLog(@"btn.frame = %@", NSStringFromCGRect(btn.frame));
+        }];
+        
+    }];
 }
 
 
@@ -149,6 +245,14 @@
         _bottomBarArr = [NSMutableArray array];
     }
     return _bottomBarArr;
+}
+
+-(NSMutableArray *)btnArray{
+    if(_btnArray == nil){
+        
+        _btnArray = [NSMutableArray array];
+    }
+    return _btnArray;
 }
 
 -(NSArray *)barArray{
