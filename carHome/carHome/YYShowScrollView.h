@@ -10,6 +10,4 @@
 
 @interface YYShowScrollView : UIScrollView
 
-
-- (void)layoutShowView;
 @end

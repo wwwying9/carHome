@@ -29,6 +29,12 @@
     [self showViewInit];
 }
 
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        [self showViewInit];
+    }
+    return self;
+}
 
 -(void)layoutSubviews{
     [super layoutSubviews];
