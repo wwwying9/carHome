@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		379E00111CEDB9B300ECB598 /* YSTopScrview.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFFF1CEDB9B300ECB598 /* YSTopScrview.m */; };
+		379E00121CEDB9B300ECB598 /* YYShowScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 379E00011CEDB9B300ECB598 /* YYShowScrollView.m */; };
+		379E00131CEDB9B300ECB598 /* YYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 379E000C1CEDB9B300ECB598 /* YYButton.m */; };
 		379EFFC11CED4ADC00ECB598 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFC01CED4ADC00ECB598 /* main.m */; };
 		379EFFC41CED4ADC00ECB598 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFC31CED4ADC00ECB598 /* AppDelegate.m */; };
 		379EFFC71CED4ADC00ECB598 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFC61CED4ADC00ECB598 /* ViewController.m */; };
@@ -15,9 +18,6 @@
 		379EFFCF1CED4ADC00ECB598 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379EFFCD1CED4ADC00ECB598 /* LaunchScreen.storyboard */; };
 		379EFFDA1CED4ADC00ECB598 /* carHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFD91CED4ADC00ECB598 /* carHomeTests.m */; };
 		379EFFE51CED4ADC00ECB598 /* carHomeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFE41CED4ADC00ECB598 /* carHomeUITests.m */; };
-		379EFFF41CED5C2C00ECB598 /* YYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFF31CED5C2C00ECB598 /* YYButton.m */; };
-		379EFFF71CED67FB00ECB598 /* YYShowScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFF61CED67FB00ECB598 /* YYShowScrollView.m */; };
-		379EFFFB1CED96B200ECB598 /* YSTopScrview.m in Sources */ = {isa = PBXBuildFile; fileRef = 379EFFFA1CED96B200ECB598 /* YSTopScrview.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		379E00001CEDB9B300ECB598 /* YYShowScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYShowScrollView.h; sourceTree = "<group>"; };
+		379E00011CEDB9B300ECB598 /* YYShowScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYShowScrollView.m; sourceTree = "<group>"; };
+		379E000B1CEDB9B300ECB598 /* YYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYButton.h; sourceTree = "<group>"; };
+		379E000C1CEDB9B300ECB598 /* YYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYButton.m; sourceTree = "<group>"; };
 		379EFFBC1CED4ADC00ECB598 /* carHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379EFFC01CED4ADC00ECB598 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		379EFFC21CED4ADC00ECB598 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,12 +58,8 @@
 		379EFFE01CED4ADC00ECB598 /* carHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = carHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		379EFFE41CED4ADC00ECB598 /* carHomeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = carHomeUITests.m; sourceTree = "<group>"; };
 		379EFFE61CED4ADC00ECB598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		379EFFF21CED5C2C00ECB598 /* YYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYButton.h; sourceTree = "<group>"; };
-		379EFFF31CED5C2C00ECB598 /* YYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYButton.m; sourceTree = "<group>"; };
-		379EFFF51CED67FB00ECB598 /* YYShowScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYShowScrollView.h; sourceTree = "<group>"; };
-		379EFFF61CED67FB00ECB598 /* YYShowScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYShowScrollView.m; sourceTree = "<group>"; };
-		379EFFF91CED96B200ECB598 /* YSTopScrview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTopScrview.h; sourceTree = "<group>"; };
-		379EFFFA1CED96B200ECB598 /* YSTopScrview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTopScrview.m; sourceTree = "<group>"; };
+		379EFFFE1CEDB9B300ECB598 /* YSTopScrview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTopScrview.h; sourceTree = "<group>"; };
+		379EFFFF1CEDB9B300ECB598 /* YSTopScrview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTopScrview.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +87,108 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		379E00021CEDB9B300ECB598 /* forum */ = {
+			isa = PBXGroup;
+			children = (
+				379E00031CEDB9B300ECB598 /* controller */,
+				379E00041CEDB9B300ECB598 /* model */,
+				379E00051CEDB9B300ECB598 /* view */,
+			);
+			path = forum;
+			sourceTree = "<group>";
+		};
+		379E00031CEDB9B300ECB598 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		379E00041CEDB9B300ECB598 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		379E00051CEDB9B300ECB598 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		379E00061CEDB9B300ECB598 /* other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		379E00071CEDB9B300ECB598 /* recommend */ = {
+			isa = PBXGroup;
+			children = (
+				379E00081CEDB9B300ECB598 /* controller */,
+				379E00091CEDB9B300ECB598 /* model */,
+				379E000A1CEDB9B300ECB598 /* view */,
+			);
+			path = recommend;
+			sourceTree = "<group>";
+		};
+		379E00081CEDB9B300ECB598 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		379E00091CEDB9B300ECB598 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		379E000A1CEDB9B300ECB598 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				379E000B1CEDB9B300ECB598 /* YYButton.h */,
+				379E000C1CEDB9B300ECB598 /* YYButton.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		379E000D1CEDB9B300ECB598 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				379E000E1CEDB9B300ECB598 /* controller */,
+				379E000F1CEDB9B300ECB598 /* model */,
+				379E00101CEDB9B300ECB598 /* view */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
+		379E000E1CEDB9B300ECB598 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		379E000F1CEDB9B300ECB598 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		379E00101CEDB9B300ECB598 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		379EFFB31CED4ADC00ECB598 = {
 			isa = PBXGroup;
 			children = (
@@ -110,15 +212,11 @@
 		379EFFBE1CED4ADC00ECB598 /* carHome */ = {
 			isa = PBXGroup;
 			children = (
-				379EFFF81CED96A600ECB598 /* ys */,
+				379EFFFC1CEDB9B300ECB598 /* Class */,
 				379EFFC21CED4ADC00ECB598 /* AppDelegate.h */,
 				379EFFC31CED4ADC00ECB598 /* AppDelegate.m */,
 				379EFFC51CED4ADC00ECB598 /* ViewController.h */,
 				379EFFC61CED4ADC00ECB598 /* ViewController.m */,
-				379EFFF51CED67FB00ECB598 /* YYShowScrollView.h */,
-				379EFFF61CED67FB00ECB598 /* YYShowScrollView.m */,
-				379EFFF21CED5C2C00ECB598 /* YYButton.h */,
-				379EFFF31CED5C2C00ECB598 /* YYButton.m */,
 				379EFFC81CED4ADC00ECB598 /* Main.storyboard */,
 				379EFFCB1CED4ADC00ECB598 /* Assets.xcassets */,
 				379EFFCD1CED4ADC00ECB598 /* LaunchScreen.storyboard */,
@@ -154,13 +252,27 @@
 			path = carHomeUITests;
 			sourceTree = "<group>";
 		};
-		379EFFF81CED96A600ECB598 /* ys */ = {
+		379EFFFC1CEDB9B300ECB598 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				379EFFF91CED96B200ECB598 /* YSTopScrview.h */,
-				379EFFFA1CED96B200ECB598 /* YSTopScrview.m */,
+				379EFFFD1CEDB9B300ECB598 /* common */,
+				379E00021CEDB9B300ECB598 /* forum */,
+				379E00061CEDB9B300ECB598 /* other */,
+				379E00071CEDB9B300ECB598 /* recommend */,
+				379E000D1CEDB9B300ECB598 /* test */,
 			);
-			name = ys;
+			path = Class;
+			sourceTree = "<group>";
+		};
+		379EFFFD1CEDB9B300ECB598 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				379EFFFE1CEDB9B300ECB598 /* YSTopScrview.h */,
+				379EFFFF1CEDB9B300ECB598 /* YSTopScrview.m */,
+				379E00001CEDB9B300ECB598 /* YYShowScrollView.h */,
+				379E00011CEDB9B300ECB598 /* YYShowScrollView.m */,
+			);
+			path = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,11 +407,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				379EFFC71CED4ADC00ECB598 /* ViewController.m in Sources */,
-				379EFFFB1CED96B200ECB598 /* YSTopScrview.m in Sources */,
 				379EFFC41CED4ADC00ECB598 /* AppDelegate.m in Sources */,
 				379EFFC11CED4ADC00ECB598 /* main.m in Sources */,
-				379EFFF71CED67FB00ECB598 /* YYShowScrollView.m in Sources */,
-				379EFFF41CED5C2C00ECB598 /* YYButton.m in Sources */,
+				379E00121CEDB9B300ECB598 /* YYShowScrollView.m in Sources */,
+				379E00111CEDB9B300ECB598 /* YSTopScrview.m in Sources */,
+				379E00131CEDB9B300ECB598 /* YYButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
