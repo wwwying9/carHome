@@ -16,11 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4V-ul-mO3">
+                                <rect key="frame" x="150" y="150" width="300" height="301"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="301" id="2Pw-8y-Bka"/>
+                                    <constraint firstAttribute="width" constant="300" id="HCO-aN-4sK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="m4V-ul-mO3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FCA-6Q-QLz"/>
+                            <constraint firstItem="m4V-ul-mO3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hcl-nu-zIp"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="351"/>
         </scene>
     </scenes>
 </document>
