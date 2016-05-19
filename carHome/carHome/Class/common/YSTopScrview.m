@@ -75,25 +75,13 @@
     
     CGFloat btnX = 0;
     for (int i = 0; i < count; i++) {
-        //计算文字宽度
+        //计算宽度
         NSDictionary *nameAttri = @{NSFontAttributeName : XMGNameFont};
         CGSize strSize = [(NSString *)_strArr[i] sizeWithAttributes:nameAttri];
         CGFloat btnW = strSize.width + 15;
         CGFloat btnH = 42;
-        btnX = btnX + btnW;
         CGFloat btnY = 0;
-    }
-    self.contentSize = CGSizeMake(btnX, 44);
-    
-    btnX = 0;
-    for (int i = 0; i < count; i++) {
         //创建Btn
-        NSDictionary *nameAttri = @{NSFontAttributeName : XMGNameFont};
-        CGSize strSize = [(NSString *)_strArr[i] sizeWithAttributes:nameAttri];
-        CGFloat btnW = strSize.width + 15;
-        CGFloat btnH = 42;
-        CGFloat btnY = 0;
-        
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(btnX, btnY, btnW, btnH)];
         btn.tag = i;
         btn.titleLabel.font = XMGNameFont;
@@ -106,6 +94,7 @@
         
         btnX = btnX + btnW;
     }
+    self.contentSize = CGSizeMake(btnX, 44);
 }
 
 @end
